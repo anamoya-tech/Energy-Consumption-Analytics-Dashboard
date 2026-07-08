@@ -268,6 +268,7 @@ RETURN
         "Normal"
     )
 
+
 This logic compares each equipment value against its own context instead of using arbitrary fixed thresholds.
 
 ---
@@ -340,7 +341,7 @@ Possible future improvements:
 - Add dynamic insight cards
 - Include energy price scenarios
 
-Example future DAX measure:
+Example future DAX measures:
 
 ```DAX
 Previous Period Consumption =
@@ -348,11 +349,18 @@ CALCULATE(
     [Total Consumption],
     DATEADD(Dim_Fecha[Date], -1, MONTH)
 )
+```
+
+```DAX
 Consumption Variation % =
 DIVIDE(
     [Total Consumption] - [Previous Period Consumption],
     [Previous Period Consumption]
 )
+```
+
+---
+
 ## Project Outcome
 
 This project demonstrates how Power BI can be used to build a business-oriented analytical tool.
